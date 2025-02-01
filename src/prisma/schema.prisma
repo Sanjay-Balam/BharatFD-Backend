@@ -1,0 +1,38 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model FAQ {
+  id        String          @id @default(uuid())
+  question    String
+  answer      String         // RichText (HTML from WYSIWYG editor)
+  language    String         @default("en") // Default language (English)
+  translations FAQTranslation[]
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
+model FAQTranslation {
+  id          String   @id @default(uuid())
+  faqId       String
+  faq         FAQ      @relation(fields: [faqId], references: [id], onDelete: Cascade)
+  language    String   // Language code (e.g., "hi", "bn")
+  question    String   // Translated question
+  answer      String   // Translated answer (HTML)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([faqId, language])
+}
+
