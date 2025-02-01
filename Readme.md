@@ -1,4 +1,4 @@
-# BharatFD Backend API 🌐
+# BharatFD Backend API 🌐 with Express + Typescript
 
 [![GitHub Repository](https://img.shields.io/badge/🚀_GitHub-Repository-2ea44f?style=for-the-badge)](https://github.com/Sanjay-Balam/BharatFD-Backend)
 [![Docker Image](https://img.shields.io/docker/pulls/sanjaybalam2003/bharatfd-backend?style=for-the-badge)](https://hub.docker.com/r/sanjaybalam2003/bharatfd-backend/tags)
@@ -19,7 +19,7 @@ Multi-language FAQ management system with Redis caching 🌟 and automatic trans
 | Layer               | Technology                          |
 |---------------------|-------------------------------------|
 | **Runtime**         | ![Bun](https://img.shields.io/badge/Bun-🧭-black) |
-| **Framework**       | ![Express](https://img.shields.io/badge/Express-🚀-lightgrey) |
+| **Framework**       | ![Express + Typescript](https://img.shields.io/badge/Express-🚀-lightgrey) |
 | **Database**        | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-🐘-blue) |
 | **Cache**           | ![Redis](https://img.shields.io/badge/Redis-🧠-red) |
 | **ORM**             | ![Prisma](https://img.shields.io/badge/Prisma-💎-2D3748) |
