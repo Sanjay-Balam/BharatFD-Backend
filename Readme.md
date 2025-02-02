@@ -94,3 +94,77 @@ bunx prisma migrate dev
 ```
 bun run dev
 ```
+## API Documentation
+
+
+### SETUP APIs using POSTMAN
+
+1. Create new collection "FAQ API"
+
+2. Add environment variables:
+    - base_url: `http://localhost:3000`
+
+
+### Endpoints
+
+#### 1. Create FAQ POST req
+
+POST /faqs
+Content-Type: application/json
+```
+{
+    "question": "How to reset password?",
+    "answer": "Visit account settings page"
+}
+```
+
+
+**Success Response (201 Created):**
+```json
+{
+  "id": "550e8400-e29b-41d4-a716-446655440000",
+  "question": "How to reset password?",
+  "answer": "Visit account settings page",
+  "translations": [
+    {
+      "question": "पासवर्ड कैसे रीसेट करें?",
+      "answer": "खाता सेटिंग्स पृष्ठ पर जाएं"
+    }
+  ]
+}
+```
+
+#### 2. Get FAQs
+
+GET /faqs?lang=hi
+
+```
+[
+    {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "question": "पासवर्ड कैसे रीसेट करें?",
+    "answer": "खाता सेटिंग्स पृष्ठ पर जाएं"
+    }
+]
+```
+
+#### 3. PUT FAQs
+
+PUT /faqs/550e8400-e29b-41d4-a716-446655440000
+
+```
+Content-Type: application/json
+{
+"question": "Updated question",
+"answer": "Updated answer"
+}
+```
+
+#### 4. DELETE Req
+
+```
+DELETE /faqs/550e8400-e29b-41d4-a716-446655440000
+```
+
+
+
